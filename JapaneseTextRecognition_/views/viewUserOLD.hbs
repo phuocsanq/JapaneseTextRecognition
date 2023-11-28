@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/js.js"></script>
+  </head>
+  <body>
+    <article id="main-content" role="main">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <nav class="navbar bg-body-tertiary">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="/home">
+                        <img src="https://th.bing.com/th/id/R.842ad4ce56a7f2bab658b0e6a5648015?rik=hImEuf1XpcT2KQ&pid=ImgRaw&r=0" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                        <span style="font-weight: bold">Nhận dạng văn bản tiếng Nhật viết tay</span>
+                      </a>
+                    </div>
+                </nav>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div style="padding-right: 97px;" class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="nav nav-underline">
+                    <li class="nav-item dropdown ">
+                      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Xin chào! {{userObj.name}}</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/myAccount">Đổi mật khẩu</a></li>
+                        <li><a class="dropdown-item" href="/myHistory">Lịch sử nhận dạng</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/">Đăng xuất</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </nav>
+      <section class="container">
+        <div class="row">
+            <h3 class="text-info">Tải ảnh</h3>
+            {{!-- <p>
+              <strong>Note:</strong> This is a CSS Demo only, no JavaScript nor
+              Server side Code is provided to handle file preview or upload
+              status.
+            </p> --}}
+            <!--image file upoad sample-->
+            <div class="box">
+                <!-- fileuploader view component -->
+                <form action="#" method="post" class="text-center" id="imageUploadForm">
+                  <div class="margin-bottom-20">
+                    <img
+                      class="thumbnail box-center margin-top-20 mb-3"
+                      alt="No image"
+                      id="uploadedImage"
+                      src="http://www.washaweb.com/tutoriaux/fileupload/imgs/image-temp-220.png"
+                    />
+                  </div>
+                  <p>
+                    <button type="button" class="btn btn-danger" id="removeImage">
+                      <i class="icon-remove"></i> Huỷ
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-success"
+                      id="saveImage"
+                    >
+                      <i class="icon-ok icon-white"></i> Nhận dạng
+                    </button>
+                  </p>
+                </form>
+                <!-- ./fileuploader view component -->
+                <div class="row">
+                  <div class="col-sm-9">
+                    <span class="control-fileupload">
+                      <label for="file1" class="text-left">Please choose a file on your computer.</label>
+                      <input type="file" id="myFile" name="filename" accept="image/*">
+                    </span>
+                  </div>
+                  <div class="col-sm-2">
+                    <button type="button" class="btn btn-primary btn-block" id="uploadButton">
+                      <i class="icon-upload icon-white"></i> Upload
+                    </button>
+                  </div>
+                </div>
+              </div>
+            <div class="box">
+                <h3 class="text-info">Kết quả nhận dạng</h3>
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                          12/9/2023 8:43PM
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                        <div class="accordion-body">
+                          私はラオカイ県で生まれて,ベトナム北部にいます 。私の故郷は 景色が美しく, 資源が豊かな地方です。ラオカイは一言でいえば, 山に囲まれた県です。山があって, 川があって, 田んぼ もあります, 自然の満喫できる思います。
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+              </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </body>
+</html>

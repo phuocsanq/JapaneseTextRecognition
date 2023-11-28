@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đổi mật khẩu</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js.js"></script>
+  </head>
+  <body>
+    <article id="main-content" role="main">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <nav class="navbar bg-body-tertiary">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="/admin">
+                        <img src="https://th.bing.com/th/id/R.842ad4ce56a7f2bab658b0e6a5648015?rik=hImEuf1XpcT2KQ&pid=ImgRaw&r=0" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                        <span style="font-weight: bold;">Nhận dạng văn bản tiếng Nhật viết tay</span>
+                      </a>
+                    </div>
+                </nav>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div style="padding-right: 97px;" class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="nav nav-underline">
+                    <li class="nav-item dropdown ">
+                      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Xin chào! {{user.name}}</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/account">Đổi mật khẩu</a></li>
+                        <li><a class="dropdown-item" href="/admin">Quản lý tài khoản</a></li>
+                        <li><a class="dropdown-item" href="/history">Quản lý lịch sử nhận dạng</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/">Đăng xuất</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </nav>
+      <section class="container mt-3">
+        <div class="row">
+            <div class="box">
+                <h3 class="text-info text-center">Thông tin tài khoản</h3>
+                <div class="container">
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-2 col-form-label">Tên người dùng: </label>
+                        <div class="col-sm-10">
+                          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{user.name}}">
+                        </div>
+                      </div>
+                      <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-2 col-form-label">Email: </label>
+                        <div class="col-sm-10">
+                          <input type="email" readonly class="form-control-plaintext" id="staticEmail" value="{{user.email}}">
+                        </div>
+                      </div>
+                      <div class="mb-3 row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Mật khẩu cũ: </label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                      </div>
+                      <div class="mb-3 row">
+                        <div class="col-2">
+                            <label for="inputPassword5" class="form-label">Mật khẩu mới: </label>
+                        </div>
+                        <div class="col-10">
+                           
+                            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+                            <div id="passwordHelpBlock" class="form-text">
+                                Mật khẩu của bạn phải dài 8-20 ký tự, chứa chữ cái và số và không được chứa dấu cách, ký tự đặc biệt hoặc biểu tượng cảm xúc.
+                            </div>
+                        </div>
+
+
+                      </div>
+                      <div class="mb-3 row">
+                        <button type="submit" class="btn btn-primary mb-1">Đổi mật khẩu</button>
+                      </div>
+                </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </body>
+</html>
+
+</body>
+</html>

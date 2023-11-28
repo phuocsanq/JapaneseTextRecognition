@@ -1,0 +1,112 @@
+{{!--
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dropzone File Upload</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <form action="/file-upload" class="dropzone" method="POST" enctype="multipart/form-data"></form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"></script>
+    <script>
+        // Cấu hình Dropzone
+        var myDropzone = new Dropzone(".dropzone", {
+            paramName: "file", // Tên của trường tệp trong yêu cầu HTTP
+            //maxFilesize: 5, // Kích thước tối đa cho mỗi tệp (MB)
+            maxFiles: 10, // Số lượng tệp tối đa được tải lên
+            acceptedFiles: ".jpg, .jpeg, .png, .pdf", // Loại tệp cho phép
+            parallelUploads: 10,
+            uploadMultiple: true, // Cho phép tải lên nhiều tệp
+            autoDiscover: false,
+            init: function () {
+                this.on("success", function (file, response) {
+                    // Xử lý khi tệp đã được tải lên thành công
+                    console.log("Tệp đã được tải lên:", file);
+                    console.log("Phản hồi từ máy chủ:", response);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html> --}}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dropzone File Upload</title>
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <form id="my-dropzone" action="/file-upload" class="dropzone" name="file"></form>
+    <button id="btn-convert">Submit data and files!</button>
+
+    <script>
+        var myDropzone = new Dropzone(".dropzone", { // The camelized version of the ID of the form element
+            // The configuration we've talked about above
+            autoProcessQueue: false,
+            paramName: "file",
+            addRemoveLinks: true,
+            dictRemoveFile: "no", // Văn bản cho liên kết xóa
+            uploadMultiple: true,
+            parallelUploads: 100,
+            maxFiles: 100,
+            url: "/file-upload",
+
+            chunksUploaded: function (file, done) {
+                // ajax below posts to a script that merges the uploaded chunks of the current file
+                $.ajax({
+                    success: function (data) {
+                        myDropzone.options.autoProcessQueue = true;
+                        done();
+                    }
+                });
+            }
+        });
+
+        document.querySelector("#btn-convert").addEventListener("click", function () {
+            // Xử lý tệp đã tải lên tại đây
+            //document.getElementById("postForm").submit();
+            myDropzone.processQueue();
+        });
+
+        myDropzone.on("queuecomplete", function () {
+            //myDropzone.options.autoProcessQueue = false;
+            window.location.href = "/"
+
+        });
+    </script>
+
+
+</body>
+
+</html>
+
+
+
+
+{{!--
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>File Upload</title>
+</head>
+
+<body>
+    <form action="/file-upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" multiple>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+
+</html> --}}
